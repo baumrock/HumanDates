@@ -2,6 +2,11 @@
 
 HumanDates is a PHP library that provides convenient methods for formatting dates as human-readable strings and generating human-friendly date ranges. It uses the `IntlDateFormatter` class to ensure accurate localization and formatting based on the specified locale.
 
+```html
+<!-- before --> 1.1.2023 - 3.1.2023
+<!-- after  --> 1. - 3.1.2023
+```
+
 ## Usage
 
 To get started, include the HumanDates library and create a new instance:
