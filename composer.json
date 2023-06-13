@@ -4,5 +4,10 @@
   "require": {
     "php": ">=8.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "humandates\\": "."
+    }
+  }
 }
