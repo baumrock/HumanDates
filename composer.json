@@ -6,8 +6,8 @@
   },
   "license": "MIT",
   "autoload": {
-    "psr-4": {
-      "humandates\\": "."
-    }
+    "files": [
+      "HumanDates.php"
+    ]
   }
 }
