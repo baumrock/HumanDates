@@ -106,7 +106,7 @@ echo $dates->format(
 You can set default formatting options for your `HumanDates` instance by specifying the locale and format pattern during initialization:
 
 ```php
-$dates = new HumanDates("de_AT", "dd.MM.Y");
+$dates = new HumanDates("de_AT", "dd.MM.y");
 echo $dates->format("2023-1-1"); // Output: 01.01.2023
 echo $dates->format("2023-1-1", "d. MMMM y"); // Output: 1.
 ```
