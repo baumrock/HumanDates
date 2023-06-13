@@ -73,10 +73,10 @@ By default, the `range()` method uses predefined patterns to format the date ran
 ```php
 // example using locale de_DE
 echo $dates->range("2023-01-01", "2023-01-03", [
-	'default'   => ['d. MMMM y', ' – ', 'd. MMMM y'], // 1. Januar 2023 - 3. Februar 2024
-	'sameYear'  => ['d. MMMM',   ' – ', 'd. MMMM y'], // 1. Januar - 3. Februar 2023
-	'sameMonth' => ['d.',        ' – ', 'd. MMMM y'], // 1. - 3. Januar 2023
-	'sameDay'   => ['d. MMMM y'],                     // 1. Januar 2023
+	'default'   => ['d. MMMM y', ' bis ', 'd. MMMM y'], // 1. Januar 2023 bis 3. Februar 2024
+	'sameYear'  => ['d. MMMM',   ' bis ', 'd. MMMM y'], // 1. Januar bis 3. Februar 2023
+	'sameMonth' => ['d.',        ' bis ', 'd. MMMM y'], // 1. bis 3. Januar 2023
+	'sameDay'   => ['d. MMMM y'],                       // 1. Januar 2023
 ]);
 ```
 
