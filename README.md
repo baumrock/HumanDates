@@ -108,7 +108,7 @@ You can set default formatting options for your `HumanDates` instance by specify
 ```php
 $dates = new HumanDates("de_AT", "dd.MM.y");
 echo $dates->format("2023-1-1"); // Output: 01.01.2023
-echo $dates->format("2023-1-1", "d. MMMM y"); // Output: 1.
+echo $dates->format("2023-1-1", "d. MMMM y"); // Output: 1. Jänner 2023
 ```
 
 ## Star the Repository
