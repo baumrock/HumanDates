@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/baumrock/HumanDates/compare/v1.0.2...v1.0.3) (2023-06-13)
+
+
+### Bug Fixes
+
+* add autoload for composer ([91daf67](https://github.com/baumrock/HumanDates/commit/91daf6780e9999143c6ed470515eac7977342acd))
+
+
+
 ## [1.0.2](https://github.com/baumrock/HumanDates/compare/v1.0.1...v1.0.2) (2023-06-13)
 
 
