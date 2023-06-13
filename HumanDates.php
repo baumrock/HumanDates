@@ -5,16 +5,16 @@ class HumanDates
   /* default range patterns */
   const rangePatterns = [
     // 1. Jan. 2023 - 3. Feb. 2024
-    'default'   => ['d. LLL. Y', ' – ', 'd. LLL. Y'],
+    'default'   => ['d. MMM. y', ' – ', 'd. MMM. y'],
 
     // 1. Jan. - 3. Feb. 2023
-    'sameYear'  => ['d. LLL.', ' – ', 'd. LLL. Y'],
+    'sameYear'  => ['d. MMM.', ' – ', 'd. MMM. y'],
 
     // 1. - 3. Jan. 2023
-    'sameMonth' => ['d.', ' – ', 'd. LLL. Y'],
+    'sameMonth' => ['d.', ' – ', 'd. MMM. y'],
 
     // 1. Jan. 2023
-    'sameDay'   => ['d. LLL. Y', '', ''],
+    'sameDay'   => ['d. MMM. y', '', ''],
   ];
 
   /** @var IntlDateFormatter */
@@ -24,7 +24,7 @@ class HumanDates
 
   function __construct(
     $locale = "en_GB",
-    $format = "d. MMM Y",
+    $format = "d. MMM y",
     $patterns = null,
   ) {
     $this->setPatterns($patterns);
