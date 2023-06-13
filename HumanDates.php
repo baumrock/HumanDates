@@ -5,16 +5,16 @@ class HumanDates
   /* default range patterns */
   const rangePatterns = [
     // 1. Jan. 2023 - 3. Feb. 2024
-    'default'   => ['d. MMM. y', ' – ', 'd. MMM. y'],
+    'default'   => ['d. MMM y', ' – ', 'd. MMM y'],
 
     // 1. Jan. - 3. Feb. 2023
-    'sameYear'  => ['d. MMM.', ' – ', 'd. MMM. y'],
+    'sameYear'  => ['d. MMM', ' – ', 'd. MMM y'],
 
     // 1. - 3. Jan. 2023
-    'sameMonth' => ['d.', ' – ', 'd. MMM. y'],
+    'sameMonth' => ['d.', ' – ', 'd. MMM y'],
 
     // 1. Jan. 2023
-    'sameDay'   => ['d. MMM. y', '', ''],
+    'sameDay'   => ['d. MMM y', '', ''],
   ];
 
   /** @var IntlDateFormatter */
