@@ -7,6 +7,9 @@ HumanDates is a PHP library that provides convenient methods for formatting date
 <!-- after  --> 1. - 3.1.2023
 ```
 
+<img width="861" alt="image" src="https://github.com/baumrock/HumanDates/assets/8488586/59a2a9fb-a925-4c79-8d99-f199583a3bcc">
+
+
 ## Usage
 
 To get started, include the HumanDates library and create a new instance:
