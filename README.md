@@ -121,4 +121,4 @@ echo $dates->format("2023-1-1", "d. MMMM y"); // Output: 1. Jänner 2023
 
 ## Star the Repository
 
-If you find HumanDates useful or interesting, please star the repository on GitHub. By starring the repository, you show your appreciation and support for the project. It also helps us understand the level of community interest and motivates us to further improve the library. So, why not give us a star today? ⭐
+If you find HumanDates useful or interesting, please star the repository on GitHub. By starring the repository, you show your appreciation and support for the project. It also helps us understand the level of community interest and motivates us to further improve the library. ⭐
