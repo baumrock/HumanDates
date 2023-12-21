@@ -58,10 +58,11 @@ class HumanDates
   /**
    * Format a daterange as human readable date string
    */
-  function range($from, $to): string
+  function range($from, $to, $patterns = null): string
   {
     $from = $this->timestamp($from);
     $to = $this->timestamp($to);
+    $this->setPatterns($patterns);
 
     if (date("Ymd", $from) === date("Ymd", $to)) $pattern = 'sameDay';
     elseif (date("Ym", $from) === date("Ym", $to)) $pattern = 'sameMonth';
@@ -69,11 +70,19 @@ class HumanDates
     else $pattern = 'default';
 
     $pattern = $this->patterns[$pattern];
-    $pieces = array_filter([
-      $this->getString($from, $pattern[0]),
-      $this->getString($to, $pattern[2]),
-    ]);
-    return implode($pattern[1], $pieces);
+    if(count($pattern) == 3) {
+      $pieces = array_filter([
+        $this->getString($from, $pattern[0]),
+        $this->getString($to, $pattern[2]),
+      ]);
+      $range = implode($pattern[1], $pieces);
+    } else {
+      $range = $this->getString($from, $pattern[0]);
+    }
+
+    $this->patterns = self::rangePatterns;
+
+    return $range;
   }
 
   /**
