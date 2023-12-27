@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/baumrock/HumanDates/compare/v1.1.0...v1.1.1) (2023-12-27)
+
+
+### Bug Fixes
+
+* remove comments ([c801aa1](https://github.com/baumrock/HumanDates/commit/c801aa1d0b740c63f11b0cfa6762248f4847ffdf))
+
+
+
 # [1.1.0](https://github.com/baumrock/HumanDates/compare/v1.0.4...v1.1.0) (2023-12-27)
 
 
@@ -36,15 +45,6 @@
 ### Bug Fixes
 
 * remove dots from default rangePatterns ([a9ec76e](https://github.com/baumrock/HumanDates/commit/a9ec76ebb4823dc2a23c08b51766d4ea6295317d))
-
-
-
-## [1.0.1](https://github.com/baumrock/HumanDates/compare/46fd51855a0c09628cbc31f606998172bb54f8e7...v1.0.1) (2023-06-13)
-
-
-### Bug Fixes
-
-* default patterns ([46fd518](https://github.com/baumrock/HumanDates/commit/46fd51855a0c09628cbc31f606998172bb54f8e7))
 
 
 
