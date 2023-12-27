@@ -88,6 +88,12 @@ echo $dates->range("2023-01-01", "2023-01-03", [
 ]);
 ```
 
+Note that this will set the patterns for this single request only! If you want to modify the globally used patterns you can do this:
+
+```php
+echo $dates->setPatterns(...)->range(...);
+```
+
 ## Setting Locales
 
 You can set the locale for date formatting either globally for the current `HumanDates` instance or on a per-format basis.
