@@ -27,9 +27,9 @@ class HumanDates
     $format = "d. MMM y",
     $patterns = null,
   ) {
-    $this->setPatterns($patterns);
     $this->setLocale($locale);
     $this->setFormat($format);
+    $this->setPatterns($patterns);
   }
 
   /**
@@ -57,33 +57,75 @@ class HumanDates
 
   /**
    * Format a daterange as human readable date string
+   *
+   * Usage:
+   * echo $dates->range("2023-12-27", "2023-12-28");
+   *
+   * Usage with custom pattern:
+   * echo $dates->range("2023-12-27", "2023-12-28", [
+   *   'sameMonth' => ["d.", " until ", "d. MMM Y"],
+   * ]);
+   *
+   * Note: Setting a pattern for this request will not modify
+   * the globally set pattern. If you want to change the pattern globally
+   * use $dates->setPatterns(...)->range(...)
    */
-  function range($from, $to, $patterns = null): string
+  function range($from, $to, array $patterns = []): string
   {
     $from = $this->timestamp($from);
     $to = $this->timestamp($to);
-    $this->setPatterns($patterns);
 
+    // find out which pattern we want to use
     if (date("Ymd", $from) === date("Ymd", $to)) $pattern = 'sameDay';
     elseif (date("Ym", $from) === date("Ym", $to)) $pattern = 'sameMonth';
     elseif (date("Y", $from) === date("Y", $to)) $pattern = 'sameYear';
     else $pattern = 'default';
 
-    $pattern = $this->patterns[$pattern];
-    if(count($pattern) == 3) {
-      $pieces = array_filter([
-        $this->getString($from, $pattern[0]),
-        $this->getString($to, $pattern[2]),
-      ]);
-      $range = implode($pattern[1], $pieces);
-    } else {
-      $range = $this->getString($from, $pattern[0]);
-    }
+    // merge patterns
+    // use global patterns by default and merge custom set patterns
+    // for this request without modifying the default patterns
+    $patterns = array_merge($this->patterns, $patterns);
 
-    $this->patterns = self::rangePatterns;
+    // get the pattern for this range (eg for sameDay)
+    $pattern = $patterns[$pattern];
+    $pieces = array_filter([
+      $this->getString($from, $pattern[0]),
+      $this->getString($to, $pattern[2]),
+    ]);
 
-    return $range;
+    // return the final date range string
+    return implode($pattern[1], $pieces);
   }
+
+  // /**
+  //  * Format a daterange as human readable date string
+  //  */
+  // function range($from, $to, $patterns = null): string
+  // {
+  //   $from = $this->timestamp($from);
+  //   $to = $this->timestamp($to);
+  //   $this->setPatterns($patterns);
+
+  //   if (date("Ymd", $from) === date("Ymd", $to)) $pattern = 'sameDay';
+  //   elseif (date("Ym", $from) === date("Ym", $to)) $pattern = 'sameMonth';
+  //   elseif (date("Y", $from) === date("Y", $to)) $pattern = 'sameYear';
+  //   else $pattern = 'default';
+
+  //   $pattern = $this->patterns[$pattern];
+  //   if (count($pattern) == 3) {
+  //     $pieces = array_filter([
+  //       $this->getString($from, $pattern[0]),
+  //       $this->getString($to, $pattern[2]),
+  //     ]);
+  //     $range = implode($pattern[1], $pieces);
+  //   } else {
+  //     $range = $this->getString($from, $pattern[0]);
+  //   }
+
+  //   $this->patterns = self::rangePatterns;
+
+  //   return $range;
+  // }
 
   /**
    * Set default date format pattern
