@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/baumrock/HumanDates/compare/v1.0.4...v1.1.0) (2023-12-27)
+
+
+### Bug Fixes
+
+* allow custom range patterns in `range` method ([b7a5e2b](https://github.com/baumrock/HumanDates/commit/b7a5e2b7d58255d36f9c6bd66ed952ef56d1a54b))
+
+
+### Features
+
+* add patterns parameter to range() as mentioned in readme ([bbf057d](https://github.com/baumrock/HumanDates/commit/bbf057d2bb02fa811ef7d435131120188316df44))
+
+
+
 ## [1.0.4](https://github.com/baumrock/HumanDates/compare/v1.0.3...v1.0.4) (2023-06-13)
 
 
